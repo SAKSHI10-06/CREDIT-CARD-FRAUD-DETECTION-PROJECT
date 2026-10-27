@@ -1,0 +1,9 @@
+column_name,data_type,sample_value_1,sample_value_2,sample_value_3,nullable,description_fill_in
+trans_id,object/numeric,1,2,3,No,trans_id — [Learner to fill in description]
+timestamp,object/numeric,2024-01-01 00:17:00,2024-01-01 00:44:00,2024-01-01 01:25:00,No,timestamp — [Learner to fill in description]
+card_token,object/numeric,CARD_XXXX7646,CARD_XXXX5910,CARD_XXXX1778,No,card_token — [Learner to fill in description]
+amount,object/numeric,147.93,78.39,172.03,No,amount — [Learner to fill in description]
+merchant_category,object/numeric,Healthcare,Fuel,Healthcare,No,merchant_category — [Learner to fill in description]
+is_fraud,object/numeric,0,0,0,No,is_fraud — [Learner to fill in description]
+merchant_id,object/numeric,MER0073,MER0023,MER0486,No,merchant_id — [Learner to fill in description]
+card_type,object/numeric,Debit,Prepaid,Prepaid,No,card_type — [Learner to fill in description]
