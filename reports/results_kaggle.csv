@@ -1,0 +1,5 @@
+Model,PR-AUC,Precision,Recall,Frauds caught,Frauds missed,False alarms
+Logistic Regression,0.7306,0.887,0.747,71,24,9
+Local Outlier Factor,0.4443,0.527,0.516,49,46,44
+One-Class SVM,0.2067,0.282,0.526,50,45,127
+Isolation Forest,0.1121,0.141,0.389,37,58,225

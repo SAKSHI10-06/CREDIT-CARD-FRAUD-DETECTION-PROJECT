@@ -1,9 +1,9 @@
 column_name,data_type,sample_value_1,sample_value_2,sample_value_3,nullable,description_fill_in
-trans_id,object/numeric,1,2,3,No,trans_id — [Learner to fill in description]
-timestamp,object/numeric,2024-01-01 00:17:00,2024-01-01 00:44:00,2024-01-01 01:25:00,No,timestamp — [Learner to fill in description]
-card_token,object/numeric,CARD_XXXX7646,CARD_XXXX5910,CARD_XXXX1778,No,card_token — [Learner to fill in description]
-amount,object/numeric,147.93,78.39,172.03,No,amount — [Learner to fill in description]
-merchant_category,object/numeric,Healthcare,Fuel,Healthcare,No,merchant_category — [Learner to fill in description]
-is_fraud,object/numeric,0,0,0,No,is_fraud — [Learner to fill in description]
-merchant_id,object/numeric,MER0073,MER0023,MER0486,No,merchant_id — [Learner to fill in description]
-card_type,object/numeric,Debit,Prepaid,Prepaid,No,card_type — [Learner to fill in description]
+trans_id,integer,1,2,3,No,"Unique sequential identifier of each transaction (1 to 5,000). Identifier only; excluded from model inputs."
+timestamp,datetime (YYYY-MM-DD HH:MM:SS),2024-01-01 00:17:00,2024-01-01 00:44:00,2024-01-01 01:25:00,No,"Date and time the transaction occurred, in chronological order. Used to derive hour, day of week and time-since-last-transaction features."
+card_token,string,CARD_XXXX7646,CARD_XXXX5910,CARD_XXXX1778,No,Masked card identifier (format CARD_XXXX + last 4 digits). No real card number is stored; used to group a card's transactions for behaviour features.
+amount,float,147.93,78.39,172.03,No,"Transaction amount in currency units. Strongly right-skewed (median about 92, maximum about 4,242 in the original data); log-transformed before modelling."
+merchant_category,categorical (7 values),Healthcare,Fuel,Healthcare,No,"Type of merchant: Fuel, Travel, Electronics, Online, Healthcare, Grocery, Restaurant. One-hot encoded for modelling."
+is_fraud,integer (0/1),0,0,0,No,"Target label: 1 = fraudulent transaction, 0 = legitimate. Used only to train supervised models and to evaluate all models, never as an input feature."
+merchant_id,string,MER0073,MER0023,MER0486,No,Identifier of the merchant (MER0001 to MER0500). Identifier only; excluded from model inputs to avoid memorising merchants.
+card_type,categorical (3 values),Debit,Prepaid,Prepaid,No,"Type of card used: Credit, Debit or Prepaid. One-hot encoded; also used as a group for the fairness analysis of false positives."
